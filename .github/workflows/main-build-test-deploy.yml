@@ -23,11 +23,11 @@ jobs:
         npm install
         npm install playwright
     - name: Start app
-      run: npm start &
-    - name: Start server  
-      run: npm server &
+      run: 
+        npm start
+        npm server &
     - name: Install Playwright Browsers
-      run: npx playwright install chrome
+      run: npx playwright install
     - name: Run tests
       run: npm test
 
