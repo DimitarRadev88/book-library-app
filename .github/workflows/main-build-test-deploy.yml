@@ -24,21 +24,14 @@ jobs:
       run: npm start &
     - name: Start server  
       run: npm server &
-    
-  test:
-
-    needs: build
-    runs-on: ubuntu-latest
-
-    steps:
-    - name: Install Playwright browsers
+    - name: Install Playwright Browsers
       run: npx playwright install --with-deps
-    - name: Run tests
+    - name: Run Playwright tests
       run: npx playwright test
 
   deploy:
 
-    needs: [build, test]
+    needs: build
     runs-on: ubuntu-latest
 
     steps:
