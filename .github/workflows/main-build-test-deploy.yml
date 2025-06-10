@@ -25,7 +25,7 @@ jobs:
         npm start
         npm server &
     - name: Run tests
-      run: npm test
+      run: npm run scripts
 
   deploy:
 
